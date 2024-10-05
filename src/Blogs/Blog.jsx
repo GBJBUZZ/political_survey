@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"; // Import Link
 
 const BlogPost = ({ date, comments, title, description, image }) => (
   <div className="mb-8 bg-white rounded-lg shadow-md overflow-hidden">
-    <img src={image} alt={title} className="w-full object-cover" />
+    <img src={image} alt={title} className="w-full h-48 object-cover" />
     <div className="p-4">
       <div className="flex items-center text-sm text-gray-500 mb-2">
         <svg
@@ -43,7 +43,6 @@ const BlogPost = ({ date, comments, title, description, image }) => (
       <h2 className="text-xl font-semibold mb-2">{title}</h2>
       <p className="text-gray-600 mb-4">{description}</p>
       <Link to="/blog-post">
-        {" "}
         <button className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300">
           Continue
         </button>
@@ -58,24 +57,21 @@ const Blog = () => {
       date: "4 July, 2024",
       comments: 2,
       title: "Political to change people poor help fund project in 2024...",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit child & poor.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit child & poor.",
       image: `${eventsimg}`,
     },
     {
       date: "4 July, 2024",
       comments: 2,
       title: "Be Volunteers to change poor help fund project in 2024...",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit child & poor.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit child & poor.",
       image: `${eventsimg}`,
     },
     {
       date: "4 July, 2024",
       comments: 2,
       title: "Founder & Campaign to change poor help fund progress in 2024...",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit child & poor.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit child & poor.",
       image: `${eventsimg}`,
     },
   ];
@@ -83,8 +79,7 @@ const Blog = () => {
   const recentNews = [
     {
       date: "02 Jun, 2024",
-      title:
-        "Free higher education for girls Benefit of the plan from the next year (2024-25)",
+      title: "Free higher education for girls Benefit of the plan from the next year (2024-25)",
       image: `${travel}`,
     },
     {
@@ -100,8 +95,8 @@ const Blog = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto pl-[130px] pr-[130px] pt-[80px]  ">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           {posts.map((post, index) => (
             <BlogPost key={index} {...post} />
@@ -109,9 +104,7 @@ const Blog = () => {
         </div>
         <div className="space-y-8">
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-semibold mb-4 border-b pb-2">
-              Recent News
-            </h3>
+            <h3 className="text-xl font-semibold mb-4 border-b pb-2">Recent News</h3>
             <div className="space-y-4">
               {recentNews.map((news, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -129,9 +122,7 @@ const Blog = () => {
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-semibold mb-4 border-b pb-2">
-              Popular Tags
-            </h3>
+            <h3 className="text-xl font-semibold mb-4 border-b pb-2">Popular Tags</h3>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
                 Activities
@@ -151,9 +142,7 @@ const Blog = () => {
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-semibold mb-4">
-              Subscribe to Our News!
-            </h3>
+            <h3 className="text-xl font-semibold mb-4">Subscribe to Our News!</h3>
             <form className="flex">
               <input
                 type="email"

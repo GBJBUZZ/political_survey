@@ -45,7 +45,7 @@ const FormCreation = () => {
   };
 
   return (
-    <div className="max-w-2xl p-6 bg-white rounded-lg -md m-auto -mt-8 border border-blue-500">
+    <div className="max-w-2xl p-6 bg-white rounded-lg mx-auto -mt-8 border border-blue-500">
       <div className="mb-4">
         <label
           htmlFor="title"

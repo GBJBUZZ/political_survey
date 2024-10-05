@@ -20,6 +20,7 @@ import Blog from "./Blogs/Blog";
 import BlogPost from "./Blogs/BlogPost";
 import PollComponent from "./CreatePollSurvey/CreatePoll/createpollcomponent/PollComponent";
 import PollComponentResult from "./CreatePollSurvey/CreatePoll/createpollcomponent/PollComponentResult";
+import PollSurveyCreationPage from "./Home/components/PollSurveyCreationPage";
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
       <div className="App">
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<PollSurveyCreationPage />} />
           <Route path="/create-poll" element={<CreatePollSurveyHome />} />
           <Route path="/poll-survey" element={<PollSurvey />} />
           <Route path="/buildform/:type/:id" element={<BuildForm />} />

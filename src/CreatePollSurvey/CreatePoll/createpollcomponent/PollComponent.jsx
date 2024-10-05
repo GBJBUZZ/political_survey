@@ -15,7 +15,7 @@ import { Link } from "react-router-dom"; // Import Link
 const PollComponent = () => {
   const [options, setOptions] = useState([
     { id: "option1", content: "Narendra", votes: 3 },
-    { id: "option2", content: "Raju karemore", votes: 2 },
+    { id: "option2", content: "Raju Karemore", votes: 2 },
     { id: "option3", content: "Rahul Gandhi", votes: 1 },
     { id: "option4", content: "Jagan", votes: 0 },
   ]);
@@ -40,26 +40,15 @@ const PollComponent = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto pl-[130px] pr-[130px] pt-[80px]  ">
-      <div className="max-w-7xl mx-auto pl-[130px] pr-[130px] pt-[80px]  ">
-        <h1 className="text-2xl font-bold text-center mb-7">
-          Create a Poll & Survey
-        </h1>
-        <p className="text-center text-gray-600 mb-20">
-          <span className="text-black">Create a Poll and survey </span> to
-          accurately gauge public opinion on politics, including topics like
-          demographics, party affiliation, key issues, candidate evaluation,
-          voting intentions, media habits, and trust in government institutions.
-        </p>
-      </div>
+    <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16 py-8">
+      <h1 className="text-2xl font-bold text-center mb-7">Create a Poll & Survey</h1>
+      <p className="text-center text-gray-600 mb-20">
+        <span className="text-black">Create a Poll and survey </span> to accurately gauge public opinion on politics, including topics like demographics, party affiliation, key issues, candidate evaluation, voting intentions, media habits, and trust in government institutions.
+      </p>
 
       <div className="border rounded-lg p-4 mb-6">
-        <h3 className="text-lg font-semibold mb-2">
-          Give the priority of winning
-        </h3>
-        <p className="text-xs text-gray-500 mb-4">
-          by Merinatha - 54 seconds ago
-        </p>
+        <h3 className="text-lg font-semibold mb-2">Give the priority of winning</h3>
+        <p className="text-xs text-gray-500 mb-4">by Merinatha - 54 seconds ago</p>
         <p className="text-sm mb-4">Drag your preferred option to the top.</p>
 
         <DragDropContext onDragEnd={onDragEnd}>
@@ -71,11 +60,7 @@ const PollComponent = () => {
                 className="space-y-2"
               >
                 {options.map((option, index) => (
-                  <Draggable
-                    key={option.id}
-                    draggableId={option.id}
-                    index={index}
-                  >
+                  <Draggable key={option.id} draggableId={option.id} index={index}>
                     {(provided) => (
                       <li
                         ref={provided.innerRef}
@@ -95,13 +80,12 @@ const PollComponent = () => {
           </Droppable>
         </DragDropContext>
 
-        <div className="flex items-center justify-between mt-4">
-          <button className="bg-indigo-600 text-white px-4 py-2 rounded-md flex items-center">
+        <div className="flex flex-col md:flex-row items-center justify-between mt-4">
+          <button className="bg-indigo-600 text-white px-4 py-2 rounded-md flex items-center mb-2 md:mb-0">
             Vote <span className="ml-1">→</span>
           </button>
           <div className="flex items-center space-x-4">
             <Link to="/rankingpollresult">
-              {" "}
               <button className="text-gray-600 flex items-center">
                 <BarChart2 size={18} className="mr-1" /> Show results
               </button>
@@ -162,9 +146,7 @@ const PollComponent = () => {
       <div className="bg-white border rounded-lg shadow-sm p-6 mb-8 mt-8">
         <h3 className="font-semibold mb-4">Comments</h3>
         <div className="bg-blue-50 p-4 rounded mb-4">
-          <p className="text-sm text-blue-800">
-            No comments yet. Be the first to write one!
-          </p>
+          <p className="text-sm text-blue-800">No comments yet. Be the first to write one!</p>
         </div>
         <div className="flex items-start space-x-4">
           <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
@@ -185,15 +167,14 @@ const PollComponent = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="mb-4 md:mb-0">
           <h3 className="font-semibold">Create Your Own Poll</h3>
           <p className="text-sm text-gray-600 w-3/4">
-            Want to create your own poll? With Political Survey anyone can
-            easily create an online poll in seconds.
+            Want to create your own poll? With Political Survey anyone can easily create an online poll in seconds.
           </p>
         </div>
-        <button className="bg-indigo-600 text-white w-32 px-1 py-3 rounded text-xs">
+        <button className="bg-indigo-600 text-white w-full md:w-32 px-1 py-3 rounded text-xs">
           Create a poll
         </button>
       </div>

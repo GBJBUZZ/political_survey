@@ -9,14 +9,14 @@ const BlogPost = () => {
         Blogs
       </h1>
 
-      <div className="bg-white shadow-lg flex rounded-lg overflow-hidden mb-6">
+      <div className="bg-white shadow-lg flex flex-col md:flex-row rounded-lg overflow-hidden mb-6">
         <img
           src={eventsimg}
           alt="People in a meeting"
-          className="w-full h-84 object-cover"
+          className="w-full h-84 md:h-84 object-cover" // Adjust height for smaller screens
         />
 
-        <div className="p-6">
+        <div className="p-4 md:p-6">
           <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
             <span>4 July, 2024</span>
             <span>2 Comments</span>
@@ -121,7 +121,7 @@ const BlogPost = () => {
         <div className="p-6">
           <h3 className="text-xl font-semibold mb-4">Leave A Comment</h3>
           <form>
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <input
                 type="text"
                 placeholder="Name*"

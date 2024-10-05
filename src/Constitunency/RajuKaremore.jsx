@@ -23,7 +23,7 @@ const CheckIcon = () => (
 );
 
 const StandPoint = ({ title, description }) => (
-  <div className="flex ">
+  <div className="flex p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
     <CheckIcon />
     <div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -34,8 +34,7 @@ const StandPoint = ({ title, description }) => (
 
 const TimelineEvent = ({ year, title, description, imageUrl, isLeft }) => (
   <div className="flex items-center justify-center mb-16 relative">
-    {/* Left section: Image or text based on isLeft */}
-    <div className={`w-5/12 ${isLeft ? "text-right pr-8" : "order-2 pl-8"}`}>
+    <div className={`w-full md:w-5/12 ${isLeft ? "text-right pr-8" : "order-2 pl-8"}`}>
       {isLeft ? (
         <img
           src={imageUrl}
@@ -50,13 +49,11 @@ const TimelineEvent = ({ year, title, description, imageUrl, isLeft }) => (
       )}
     </div>
 
-    {/* Center: Year */}
     <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-indigo-600 rounded-full text-white flex items-center justify-center text-sm font-bold z-10">
       {year}
     </div>
 
-    {/* Right section: Text or image based on isLeft */}
-    <div className={`w-5/12 ${isLeft ? "order-2 pl-8" : "pr-8"}`}>
+    <div className={`w-full md:w-5/12 ${isLeft ? "order-2 pl-8" : "pr-8"}`}>
       {isLeft ? (
         <>
           <h3 className="text-xl font-semibold text-blue-950 mb-2">{title}</h3>
@@ -106,11 +103,11 @@ const Timeline = () => {
   ];
 
   return (
-    <div className="my-12 relative">
+    <section className="my-12 relative">
       <h2 className="text-2xl font-semibold text-center mb-3 mt-20">
         Biography of Raju Karemore
       </h2>
-      <p className="text-center mb-12 w-2/3 m-auto text-gray-600">
+      <p className="text-center mb-12 w-2/3 mx-auto text-gray-600">
         Raju Karemore is a visionary leader known for his groundbreaking
         innovations, unwavering perseverance, and impactful contributions to
         both industry and community.
@@ -128,7 +125,7 @@ const Timeline = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -181,7 +178,7 @@ const RajuKaremore = () => {
             <img
               src={rajukaremore}
               alt="Raju Karemore"
-              className="mx-auto w-80 h-60"
+              className="mx-auto w-80 h-60 rounded-lg shadow-lg"
             />
             <div className="flex gap-14 justify-center items-center bg-blue-100 py-1 ">
               <span className="font-semibold mr-2 text-blue-600">
@@ -213,8 +210,8 @@ const RajuKaremore = () => {
         <h2 className="text-xl font-semibold text-center mb-1 text-blue-950">
           My Stands
         </h2>
-        <hr className="w-28 h-5 m-auto " />
-        <div className="grid gap-8">
+        <hr className="w-28 h-1 mx-auto mb-4 bg-blue-500" />
+        <div className="grid gap-8 md:grid-cols-2">
           {standPoints.map((point, index) => (
             <StandPoint
               key={index}

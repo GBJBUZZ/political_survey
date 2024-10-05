@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  PlusCircle,
-  Share2,
-  BarChart2,
-  Mail,
-  MessageCircle,
-} from "lucide-react";
+import { PlusCircle, Share2, BarChart2, Mail, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom"; // Import Link
 
 const PollSurveyCreator = () => {
@@ -14,27 +8,22 @@ const PollSurveyCreator = () => {
   );
 
   return (
-    <div>
-      <div className="max-w-7xl mx-auto pl-[130px] pr-[130px] pt-[80px]  ">
-        <div>
-          <h1 className="text-2xl font-bold text-center mb-7">
-            Create a Poll & Survey
-          </h1>
-          <p className="text-center text-gray-600 mb-20">
-            <span className="text-black">Create a Poll and survey </span> to
-            accurately gauge public opinion on politics, including topics like
-            demographics, party affiliation, key issues, candidate evaluation,
-            voting intentions, media habits, and trust in government
-            institutions.
-          </p>
-        </div>
+    <div className="max-w-full px-4 sm:px-8 lg:px-40">
+      <div className="pt-16 pb-10">
+        <h1 className="text-2xl font-bold text-center mb-7">
+          Create a Poll & Survey
+        </h1>
+        <p className="text-center text-gray-600 mb-20">
+          <span className="text-black">Create a Poll and survey </span> to
+          accurately gauge public opinion on politics, including topics like
+          demographics, party affiliation, key issues, candidate evaluation,
+          voting intentions, media habits, and trust in government
+          institutions.
+        </p>
 
-        <div className="bg-white border rounded-lg border border-blue-700 shadow-sm p-6 mx-40 my-20">
+        <div className="bg-white border rounded-lg border border-blue-700 shadow-sm p-6 mx-auto my-8 max-w-3xl">
           <h2 className="font-semibold text-xl mb-2">{pollQuestion}</h2>
-
-          <p className="text-sm text-gray-500 mb-6">
-            by a guest · 10 minutes ago
-          </p>
+          <p className="text-sm text-gray-500 mb-6">by a guest · 10 minutes ago</p>
 
           <div className="space-y-2 mb-8">
             <p className="text-sm text-gray-500 mb-6">Make a Choice: </p>
@@ -48,28 +37,23 @@ const PollSurveyCreator = () => {
             </div>
           </div>
           <div className="mb-2">
-            <label
-              className="block text-gray-700 text-sm font-semibold mb-1 mt-2"
-              htmlFor="amount"
-            >
+            <label className="block text-gray-700 text-sm font-semibold mb-1 mt-2" htmlFor="name">
               Name
             </label>
             <input
               className="appearance-none border border-[#dee2e6] rounded w-full mb-5 py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
-              id="amount"
-              type="number"
+              id="name"
+              type="text"
               placeholder="Enter Your Name"
-              style={{ fontSize: "0.75rem" }} // xs size
             />
           </div>
 
-          <div className="flex  ">
-            <button className="bg-indigo-600 text-white px-4 py-2 rounded-md flex items-center mr-4">
+          <div className="flex flex-col sm:flex-row items-center">
+            <button className="bg-indigo-600 text-white px-4 py-2 rounded-md flex items-center mr-4 mb-2 sm:mb-0">
               Vote <span className="ml-1">→</span>
             </button>
-            <div className="flex items-center space-x-4 px-4 py-2 rounded-md border border-grey-500 mr-4 ">
+            <div className="flex items-center space-x-4 mr-4">
               <Link to="/show-result">
-                {" "}
                 <button className="text-gray-600 flex items-center">
                   <BarChart2 size={18} className="mr-1" /> Show results
                 </button>
@@ -138,7 +122,6 @@ const PollSurveyCreator = () => {
         <div className="flex items-center justify-between">
           <div>
             <h3 className="font-semibold">Create Your Own Poll</h3>
-
             <p className="text-sm text-gray-600 w-3/4">
               Want to create your own poll? With Political Survey anyone can
               easily create an online poll in seconds.
@@ -146,7 +129,6 @@ const PollSurveyCreator = () => {
           </div>
 
           <Link to="/create-a-poll">
-            {" "}
             <button className="bg-indigo-600 text-white w-32 px-1 py-3 rounded text-xs">
               Create a poll
             </button>

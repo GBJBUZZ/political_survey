@@ -2,13 +2,13 @@ import React from "react";
 
 const Nav = ({ selectedTab, setSelectedTab }) => {
   return (
-    <div className="flex space-x-4 bg-[#ADA8F8] p-2  w-full justify-center">
+    <div className="flex flex-wrap space-x-4 bg-[#ADA8F8] p-2 w-full justify-center">
       <button
         className={`py-2 px-6 ${
           selectedTab === "Build"
             ? "bg-[#4F46E5] text-white"
             : "bg-[#ADA8F8] text-gray-800"
-        } rounded-full hover:bg-purple-400`}
+        } rounded-full hover:bg-purple-400 transition duration-200`}
         onClick={() => setSelectedTab("Build")}
       >
         Build
@@ -18,8 +18,8 @@ const Nav = ({ selectedTab, setSelectedTab }) => {
           selectedTab === "Settings"
             ? "bg-[#4F46E5] text-white"
             : "bg-[#ADA8F8] text-gray-800"
-        } rounded-full hover:bg-purple-400`}
-        onClick={() => setSelectedTab("Setting")}
+        } rounded-full hover:bg-purple-400 transition duration-200`}
+        onClick={() => setSelectedTab("Settings")}
       >
         Settings
       </button>
@@ -28,7 +28,7 @@ const Nav = ({ selectedTab, setSelectedTab }) => {
           selectedTab === "Publish"
             ? "bg-[#4F46E5] text-white"
             : "bg-[#ADA8F8] text-gray-800"
-        } rounded-full hover:bg-purple-400`}
+        } rounded-full hover:bg-purple-400 transition duration-200`}
         onClick={() => setSelectedTab("Publish")}
       >
         Publish

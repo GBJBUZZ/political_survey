@@ -506,7 +506,7 @@ const PollSurveyCreationPage = () => {
             />
           </div>
         </div>
-      </div>
+      </div> {/* here */}
 
       <div className="mb-20 mt-12">
         <div className="flex items-center justify-between">
