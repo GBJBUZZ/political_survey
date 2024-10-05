@@ -3,7 +3,6 @@ import Logo from "../src/assets/images/Footer1.jpeg"; // This is your main image
 import BackgroundImage from "../src/assets/images/Background.png"; // Your background image
 import girl from "../src/assets/images/girl.png"; // This is your main image for the girl
 
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -36,7 +35,6 @@ const Footer = () => {
         </div>
       </div>
 
-    
       {/* Footer Content */}
       <div className="bg-indigo-600 text-white">
         <div className="container w-8/12 mx-auto px-4 py-12">
@@ -44,10 +42,7 @@ const Footer = () => {
             <div>
               <h3 className="text-xl font-bold mb-4">About Company</h3>
               <div className="text-sm">
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
-                  massa mi.
-                </p>
+                <p className="mb-4"></p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
             </div>
