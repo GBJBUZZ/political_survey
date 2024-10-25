@@ -12,19 +12,23 @@ const EventCard = ({
   imageUrl,
 }) => (
   <div
-    className="flex bg-white rounded-lg shadow-md overflow-hidden mb-4"
+    className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden mb-4"
     style={{ maxWidth: "900px", height: "auto", minHeight: "160px" }}
   >
     {/* Adjusted image width and height */}
-    <img src={imageUrl} alt={title} className="w-1/6 h-28 object-cover" />
+    <img
+      src={imageUrl}
+      alt={title}
+      className="w-full md:w-1/6 h-28 object-cover"
+    />
     <div className="p-3 flex-grow">
       {/* Semi-bold title with reduced font size */}
-      <h3 className="font-semibold text-base mb-1">{title}</h3>
+      <h3 className="font-semibold text-lg md:text-base mb-1">{title}</h3>
       {/* Reduced font size for description */}
       <p className="text-gray-600 text-sm mb-1">{description}</p>
       {/* Flex container for date, speaker, and location */}
-      <div className="flex space-x-3 text-xs text-gray-500 mb-1">
-        <div className="flex items-center">
+      <div className="flex flex-col md:flex-row md:space-x-3 text-xs text-gray-500 mb-1">
+        <div className="flex items-center mb-1 md:mb-0">
           <svg
             className="w-3 h-3 mr-1"
             fill="none"
@@ -41,7 +45,7 @@ const EventCard = ({
           </svg>
           {date}
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center mb-1 md:mb-0">
           <svg
             className="w-3 h-3 mr-1"
             fill="none"
@@ -86,7 +90,7 @@ const EventCard = ({
     <div className="flex items-center p-3">
       <Link to="/event-details">
         {/* Link to the desired page */}
-        <button className="bg-indigo-600 text-white mr-10 px-3 py-1 rounded text-sm hover:bg-indigo-700 transition duration-300">
+        <button className="bg-indigo-600 text-white px-3 py-1 rounded text-sm hover:bg-indigo-700 transition duration-300">
           Join Now
         </button>
       </Link>
@@ -156,22 +160,22 @@ const UpcomingEventsPage = () => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto pl-[130px] pr-[130px] pt-[80px]  ">
+      <div className="max-w-7xl mx-auto px-4 pt-20">
         {/* New Block with Text "Events" shifted to the left and adjusted size */}
-        <div className="bg-indigo-600 w-32 text-[10px] font-semibold text-white text-center py-1 px-2 mb-2">
+        <div className="bg-indigo-600 w-32 text-xs font-semibold text-white text-center py-1 px-2 mb-2">
           EVENTS
         </div>
 
-        <div className="flex justify-between items-center mb-20">
-          <h2 className="text-3xl font-medium text-grey-700">
+        <div className="flex justify-between items-center mb-6 flex-col md:flex-row">
+          <h2 className="text-3xl font-medium text-gray-700 mb-2 md:mb-0">
             Upcoming Events
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-center md:text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa
             mi.
           </p>
         </div>
-        <div className="pl-20 pb-40">
+        <div className="pb-40">
           {events.map((event, index) => (
             <EventCard key={index} {...event} />
           ))}

@@ -1,152 +1,87 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./App.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = [
+    { to: "/", text: "Home", exact: true },
+    { to: "/poll-survey", text: "Poll & Survey" },
+    { to: "/upcoming-events", text: "Upcoming Political Events" },
+    { to: "/create-poll", text: "Create Poll & Survey" },
+    { to: "/blog", text: "Blog" },
+    { to: "/contact", text: "Contact" }
+  ];
+
   return (
-    <nav className="bg-[#4F46E5] text-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-7 lg:px-8">
+    <nav className="bg-indigo-600 text-white">
+      <div className="max-w-4xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-semibold">Logo</h1>
           </div>
+
+          {/* Desktop Menu */}
           <div className="hidden md:block">
             <ul className="flex space-x-6">
-              <li>
-                <NavLink
-                  exact
-                  to="/"
-                  className="hover-underline-animation text-lg md:text-base"
-                  activeClassName="active-underline"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/poll-survey"
-                  className="hover-underline-animation text-lg md:text-base"
-                  activeClassName="active-underline"
-                >
-                  Poll & Survey
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/upcoming-events"
-                  className="hover-underline-animation text-lg md:text-base"
-                  activeClassName="active-underline"
-                >
-                  Upcoming Political Events
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/create-poll"
-                  className="hover-underline-animation text-lg md:text-base"
-                  activeClassName="active-underline"
-                >
-                  Create Poll & Survey
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/blog"
-                  className="hover-underline-animation text-lg md:text-base"
-                  activeClassName="active-underline"
-                >
-                  Blog
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/contact"
-                  className="hover-underline-animation text-lg md:text-base"
-                  activeClassName="active-underline"
-                >
-                  Contact
-                </NavLink>
-              </li>
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <NavLink
+                    to={link.to}
+                    exact={link.exact}
+                    className="hover:text-gray-200 transition-colors duration-200"
+                    activeClassName="font-bold"
+                  >
+                    {link.text}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* Hamburger Menu Button - Visible below 768px */}
           <div className="md:hidden">
             <button
-              className="text-white bg-indigo-600 p-2 rounded-md"
               onClick={() => setIsOpen(!isOpen)}
-              aria-controls="mobile-menu"
+              className="p-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-white"
               aria-expanded={isOpen}
+              aria-label="Toggle menu"
             >
-              <span className="sr-only">Open menu</span>
-              {isOpen ? "✖" : "☰"}
+              {isOpen ? (
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden" id="mobile-menu">
-          <ul className="space-y-4 p-4">
-            <li>
-              <NavLink
-                exact
-                to="/"
-                className="hover-underline-animation text-lg md:text-base"
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/poll-survey"
-                className="hover-underline-animation text-lg md:text-base"
-                onClick={() => setIsOpen(false)}
-              >
-                Poll & Survey
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/upcoming-events"
-                className="hover-underline-animation text-lg md:text-base"
-                onClick={() => setIsOpen(false)}
-              >
-                Upcoming Political Events
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/create-poll"
-                className="hover-underline-animation text-lg md:text-base"
-                onClick={() => setIsOpen(false)}
-              >
-                Create Poll & Survey
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/blog"
-                className="hover-underline-animation text-lg md:text-base"
-                onClick={() => setIsOpen(false)}
-              >
-                Blog
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className="hover-underline-animation text-lg md:text-base"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      )}
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden">
+            <ul className="px-2 pt-2 pb-3 space-y-1">
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <NavLink
+                    to={link.to}
+                    exact={link.exact}
+                    className="block px-3 py-2 rounded-md hover:bg-indigo-700"
+                    activeClassName="bg-indigo-700 font-bold"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.text}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </nav>
   );
 };
