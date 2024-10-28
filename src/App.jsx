@@ -21,12 +21,14 @@ import BlogPost from "./Blogs/BlogPost";
 import PollComponent from "./CreatePollSurvey/CreatePoll/createpollcomponent/PollComponent";
 import PollComponentResult from "./CreatePollSurvey/CreatePoll/createpollcomponent/PollComponentResult";
 import PollSurveyCreationPage from "./Home/components/PollSurveyCreationPage";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
-        <Navbar/>
+        <Navbar />
         <Routes>
           <Route path="/" element={<PollSurveyCreationPage />} />
           <Route path="/create-poll" element={<CreatePollSurveyHome />} />
@@ -46,7 +48,7 @@ const App = () => {
           <Route path="/rankingpoll" element={<PollComponent />} />
           <Route path="/rankingpollresult" element={<PollComponentResult />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );

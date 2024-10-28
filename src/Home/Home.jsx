@@ -28,7 +28,7 @@ const data = [
   { name: "Dudu", Harvesh: 70, RaviKaushik: 65, ManishYadav: 60 },
 ];
 
-const PollSurveyCreationPage = () => {
+const Home = () => {
   return (
     <div className="max-w-7xl mx-auto pl-[130px] pr-[130px] pt-[80px]  ">
       <h1 className="text-3xl font-bold text-center mb-7 mt-3">
@@ -41,7 +41,6 @@ const PollSurveyCreationPage = () => {
         key issues, candidate evaluation, voting intentions, media habits, and
         trust in government institutions.
       </p>
-
       {/* Real-time Poll Results Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-2 mt-2 ">
         <div className="pr-10">
@@ -58,9 +57,11 @@ const PollSurveyCreationPage = () => {
             As soon as a poll has been completed, the results can be exported in
             pdf format if required.
           </p>
-          <button className="bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition duration-300">
-            Create Your Poll
-          </button>
+          <Link to="/create-a-poll">
+            <button className="bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition duration-300">
+              Create Your Poll
+            </button>
+          </Link>
         </div>
         <div className="bg-gray-100 px-10 py-5 rounded-lg shadow-md">
           <h3 className="text-m font-semibold m-5 pb-5">
@@ -80,7 +81,6 @@ const PollSurveyCreationPage = () => {
           </ResponsiveContainer>
         </div>
       </div>
-
       {/* Drag and Drop Image Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12 pt-20">
         <div>
@@ -106,7 +106,6 @@ const PollSurveyCreationPage = () => {
           </button>
         </div>
       </div>
-
       {/* Donation Section */}
       <div className="bg-[#DFE9FF] p-8 rounded-lg mb-12">
         <h2 className="text-m text-blue-700 font-bold mb-5">Donation</h2>
@@ -311,7 +310,6 @@ const PollSurveyCreationPage = () => {
           </div>
         </div>
       </div>
-
       <div className="mb-12">
         <div className="flex justify-between m-auto">
           <div className="flex flex-col justify-between mb-4">
@@ -506,8 +504,8 @@ const PollSurveyCreationPage = () => {
             />
           </div>
         </div>
-      </div> {/* here */}
-
+      </div>{" "}
+      {/* here */}
       <div className="mb-20 mt-12">
         <div className="flex items-center justify-between">
           <div>
@@ -612,9 +610,11 @@ const PollSurveyCreationPage = () => {
                 </div>
               </div>
               <div className="p-4">
-                <button className="bg-indigo-600 text-white text-sm py-1 px-3 rounded-md hover:bg-indigo-700 transition duration-300">
-                  JOIN NOW
-                </button>
+                <Link to="/event-details">
+                  <button className="bg-indigo-600 text-white text-sm py-1 px-3 rounded-md hover:bg-indigo-700 transition duration-300">
+                    JOIN NOW
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -624,4 +624,4 @@ const PollSurveyCreationPage = () => {
   );
 };
 
-export default PollSurveyCreationPage;
+export default Home;

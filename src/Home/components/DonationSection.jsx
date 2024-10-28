@@ -86,120 +86,121 @@ const DonationSection = () => {
             </li>
           </ul>
         </div>
-        <div className="bg-white flex flex-col items-center p-10 shadow-md">
-          <h3 className="text-xl font-semibold mb-3">Make a Donation</h3>
-          <p className="text-gray-600 mb-4 text-xs text-center">
-            Make a donation to support our political initiatives and help drive
-            positive change in our community.
-          </p>
-          <form className="w-full max-w-lg">
-            <div className="mb-2">
-              <label
-                className="block text-gray-700 text-sm font-semibold mb-1 mt-2"
-                htmlFor="amount"
-              >
-                Amount
-              </label>
-              <input
-                className="appearance-none border border-[#dee2e6] rounded w-full py-2 px-3 bg-[#f0efff] text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
-                id="amount"
-                type="number"
-                placeholder="Enter donation amount"
-                style={{ fontSize: "0.75rem" }} // xs size
-              />
+        <div className="bg-white flex flex-col items-center p-4 shadow-md">
+          <form className="w-full max-w-lg mx-auto  sm:px-4 sm:py-6">
+            <div className="text-center mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2 text-center">
+                Make a Donation
+              </h2>
+              <p className="text-gray-600 text-xs sm:text-sm px-2">
+                Make a donation to support our political initiatives and help
+                drive positive change in our community.
+              </p>
             </div>
 
-            {/* First Name and Last Name */}
-            <div className="flex flex-col sm:flex-row justify-between mb-2">
-              <div className="w-full sm:w-1/2 mr-2 mb-2 sm:mb-0">
+            <div className="space-y-3 sm:space-y-4">
+              {/* Amount */}
+              <div>
                 <label
-                  className="block text-gray-500 text-xs font-semibold mb-1 mt-2"
-                  htmlFor="first-name"
+                  className="block text-gray-700 text-sm font-medium mb-1.5"
+                  htmlFor="amount"
                 >
-                  First Name
+                  Amount
                 </label>
                 <input
-                  className="appearance-none border border-[#dee2e6] rounded w-full py-2 px-3 bg-[#f0efff] text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
-                  id="first-name"
-                  type="text"
-                  placeholder="Enter your first name"
-                  style={{ fontSize: "0.75rem" }}
+                  className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-300 bg-[#f0efff] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  id="amount"
+                  type="number"
+                  placeholder="Enter donation amount"
                 />
               </div>
-              <div className="w-full sm:w-1/2 ml-2">
-                <label
-                  className="block text-gray-500 text-xs font-semibold mb-1 mt-2"
-                  htmlFor="last-name"
-                >
-                  Last Name
-                </label>
-                <input
-                  className="appearance-none border border-[#dee2e6] rounded w-full py-2 px-3 bg-[#f0efff] text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
-                  id="last-name"
-                  type="text"
-                  placeholder="Enter your last name"
-                  style={{ fontSize: "0.75rem" }}
-                />
-              </div>
-            </div>
 
-            {/* Email and Phone Number */}
-            <div className="flex flex-col sm:flex-row justify-between mb-2">
-              <div className="w-full sm:w-1/2 mr-2 mb-2 sm:mb-0">
+              {/* Name Fields */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <div>
+                  <label
+                    className="block text-gray-700 text-sm font-medium mb-1.5"
+                    htmlFor="first-name"
+                  >
+                    First Name
+                  </label>
+                  <input
+                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-300 bg-[#f0efff] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    id="first-name"
+                    type="text"
+                    placeholder="Enter your first name"
+                  />
+                </div>
+                <div>
+                  <label
+                    className="block text-gray-700 text-sm font-medium mb-1.5"
+                    htmlFor="last-name"
+                  >
+                    Last Name
+                  </label>
+                  <input
+                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-300 bg-[#f0efff] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    id="last-name"
+                    type="text"
+                    placeholder="Enter your last name"
+                  />
+                </div>
+              </div>
+
+              {/* Contact Fields */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <div>
+                  <label
+                    className="block text-gray-700 text-sm font-medium mb-1.5"
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <input
+                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-300 bg-[#f0efff] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div>
+                  <label
+                    className="block text-gray-700 text-sm font-medium mb-1.5"
+                    htmlFor="phone"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-300 bg-[#f0efff] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    id="phone"
+                    type="tel"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+              </div>
+
+              {/* Note */}
+              <div>
                 <label
-                  className="block text-gray-500 text-xs font-semibold mb-1 mt-2"
-                  htmlFor="email"
+                  className="block text-gray-700 text-sm font-medium mb-1.5"
+                  htmlFor="note"
                 >
-                  Email
+                  Note
                 </label>
-                <input
-                  className="appearance-none border border-[#dee2e6] rounded w-full py-2 px-3 bg-[#f0efff] text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
-                  id="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  style={{ fontSize: "0.75rem" }}
+                <textarea
+                  className="w-full px-3 py-2.5 text-sm rounded-lg border border-gray-300 bg-[#f0efff] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+                  id="note"
+                  placeholder="Leave a note (optional)"
+                  rows="4"
                 />
               </div>
-              <div className="w-full sm:w-1/2 ml-2">
-                <label
-                  className="block text-gray-500 text-xs font-semibold mb-1 mt-2"
-                  htmlFor="phone"
-                >
-                  Phone Number
-                </label>
-                <input
-                  className="appearance-none border border-[#dee2e6] rounded w-full py-2 px-3 bg-[#f0efff] text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
-                  id="phone"
-                  type="tel"
-                  placeholder="Enter your phone number"
-                  style={{ fontSize: "0.75rem" }}
-                />
+
+              {/* Submit Button */}
+              <div className="mt-4 sm:mt-6 text-center">
+                <button className="w-full md:w-auto md:px-10 py-2.5 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition duration-300 shadow-sm">
+                  Donate Now
+                </button>
               </div>
-            </div>
-
-            {/* Note */}
-            <div className="mb-2">
-              <label
-                className="block text-gray-500 text-xs font-semibold mb-1 mt-2"
-                htmlFor="note"
-              >
-                Note
-              </label>
-              <textarea
-                className="appearance-none border border-[#dee2e6] rounded w-full py-2 px-3 bg-[#f0efff] text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
-                id="note"
-                placeholder="Leave a note (optional)"
-                rows="4"
-                style={{ fontSize: "0.75rem" }}
-                resize="none" // Prevent resizing
-              />
-            </div>
-
-            {/* Submit Button */}
-            <div className="flex justify-center mt-4">
-              <button className="bg-indigo-600 text-white py-2 px-20 rounded-md hover:bg-indigo-700 transition duration-300">
-                Donate Now
-              </button>
             </div>
           </form>
         </div>

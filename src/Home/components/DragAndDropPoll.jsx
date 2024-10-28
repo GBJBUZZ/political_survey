@@ -1,5 +1,6 @@
 import React from "react";
 import dragandrop from "../../assets/images/dragandrop.png";
+import { Link } from "react-router-dom"; // Import Link
 
 const DragAndDropPoll = () => {
   return (
@@ -21,9 +22,11 @@ const DragAndDropPoll = () => {
           area. Follow the prompts to set up your questions and options. Once
           you are done, publish your poll to gather responses and insights.
         </p>
-        <button className="bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition duration-300">
-          Create Your Poll
-        </button>
+        <Link to="/create-a-poll">
+          <button className="bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition duration-300">
+            Create Your Poll
+          </button>
+        </Link>
       </div>
     </div>
   );

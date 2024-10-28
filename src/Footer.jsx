@@ -56,12 +56,12 @@ const Footer = () => {
               <h3 className="text-xl font-bold mb-4">Our Links</h3>
               <ul className="text-sm space-y-2">
                 <li>
-                  <Link to="/polls" className="hover:underline">
+                  <Link to="/create-a-survey" className="hover:underline">
                     Poll and Survey
                   </Link>
                 </li>
                 <li>
-                  <Link to="/events" className="hover:underline">
+                  <Link to="/upcoming-events" className="hover:underline">
                     Upcoming Events
                   </Link>
                 </li>
@@ -71,7 +71,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:underline">
+                  <Link to="/blog" className="hover:underline">
                     Contact Us
                   </Link>
                 </li>

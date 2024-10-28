@@ -1,6 +1,7 @@
-import React from 'react';
-import eventsimg from '../../assets/images/events.png';
-import { events } from '../data/eventData';
+import React from "react";
+import eventsimg from "../../assets/images/events.png";
+import { events } from "../data/eventData";
+import { Link } from "react-router-dom"; // Import Link
 
 const UpcomingEvents = () => {
   return (
@@ -24,7 +25,7 @@ const UpcomingEvents = () => {
           <div
             key={index}
             className="flex items-center bg-white rounded-lg shadow-md overflow-hidden"
-            style={{ height: '120px' }} // Maintain card height
+            style={{ height: "120px" }} // Maintain card height
           >
             <img
               src={eventsimg}
@@ -33,9 +34,7 @@ const UpcomingEvents = () => {
             />
             <div className="p-4 flex-1">
               <h3 className="text-sm font-medium mb-1">{event.title}</h3>
-              <p className="text-gray-600 text-xs mb-2">
-                {event.description}
-              </p>
+              <p className="text-gray-600 text-xs mb-2">{event.description}</p>
               <div className="flex items-center text-xs text-gray-500 mb-2">
                 <svg
                   className="w-3 h-3 mr-1"
@@ -82,9 +81,11 @@ const UpcomingEvents = () => {
               </div>
             </div>
             <div className="p-4">
-              <button className="bg-indigo-600 text-white text-sm py-1 px-3 rounded-md hover:bg-indigo-700 transition duration-300">
-                JOIN NOW
-              </button>
+              <Link to="/event-details">
+                <button className="bg-indigo-600 text-white text-sm py-1 px-3 rounded-md hover:bg-indigo-700 transition duration-300">
+                  JOIN NOW
+                </button>
+              </Link>
             </div>
           </div>
         ))}
