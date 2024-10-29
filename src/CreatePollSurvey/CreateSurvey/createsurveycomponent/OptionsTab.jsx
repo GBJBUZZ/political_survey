@@ -8,14 +8,14 @@ const OptionsTab = () => {
   const [selectedTab, setSelectedTab] = useState("Build");
 
   return (
-    <div className="flex flex-col justify-center bg-gray-50 mt-10 ml-80 mr-80 mb-20">
+    <div className="flex flex-col items-center bg-gray-50 mt-4 sm:mt-6 md:mt-10 mx-4 sm:mx-6 md:mx-20 lg:mx-40 mb-10 sm:mb-16 lg:mb-20">
       {/* NavBar */}
       <Nav selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
 
       {/* Content Area */}
-      <div className="w-[800px] mx-auto p-6 mt-20 bg-white border border-gray-300 rounded-sm">
+      <div className="w-full max-w-md sm:max-w-lg md:max-w-2xl mx-auto p-4 sm:p-6 md:p-8 bg-white border border-gray-300 rounded-lg mt-6 sm:mt-10">
         {selectedTab === "Build" && <BuildForm />}
-        {selectedTab === "Setting" && <Setting />}
+        {selectedTab === "Settings" && <Setting />} {/* Updated here */}
         {selectedTab === "Publish" && <Publish />}
       </div>
     </div>

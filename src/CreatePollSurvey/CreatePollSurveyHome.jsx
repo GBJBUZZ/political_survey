@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"; // Import Link
 const CreatePollSurveyHome = () => {
   return (
     <div className="flex flex-col items-center bg-white min-h-screen p-4">
-      <h1 className="text-3xl sm:text-2xl font-semibold text-gray-800 mt-20 mb-5 text-center">
+      <h1 className="text-3xl sm:text-2xl font-semibold text-gray-800 mt-10 mb-5 text-center">
         Create a Poll & Survey
       </h1>
 

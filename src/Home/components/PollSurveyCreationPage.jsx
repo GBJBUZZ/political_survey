@@ -8,7 +8,7 @@ import UpcomingEvents from './UpcomingEvents';
 
 const PollSurveyCreationPage = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[130px] pt-6 lg:pt-[80px]">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-[130px] pt-6">
       <h1 className="text-2xl sm:text-3xl font-bold text-center mb-5 sm:mb-7 mt-3">
         Create a Poll & Survey
       </h1>

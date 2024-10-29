@@ -27,30 +27,30 @@ const Setting = () => {
   };
 
   return (
-    <div className="w-[700px] mx-auto p-6 bg-[#DFE9FF] rounded-lg">
+    <div className="w-full max-w-3xl mx-auto p-4 sm:p-6 md:p-8 bg-[#DFE9FF] rounded-lg">
       <div className="flex items-center mb-6">
         <div className="bg-orange-500 p-2 rounded-lg mr-3">
           <Settings className="text-white" size={14} />
         </div>
         <div>
-          <h2 className="text-lg text-gray-800 text-sm font-semibold">
+          <h2 className="text-base sm:text-lg font-semibold text-gray-800">
             FORM SETTINGS
           </h2>
-          <p className="text-xs text-gray-600">
+          <p className="text-xs sm:text-sm text-gray-600">
             Customize form status and properties
           </p>
         </div>
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
+      <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm mb-6">
         <div className="mb-6">
           <label
             htmlFor="formTitle"
-            className="block text-xs font-medium text-gray-700 mb-1"
+            className="block text-xs sm:text-sm font-medium text-gray-700 mb-1"
           >
             Title
           </label>
-          <p className="text-xs text-gray-500 mb-2">
+          <p className="text-xs sm:text-sm text-gray-500 mb-2">
             Enter a name for your form
           </p>
           <input
@@ -58,18 +58,18 @@ const Setting = () => {
             id="formTitle"
             value={formTitle}
             onChange={(e) => setFormTitle(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md text-xs"
+            className="w-full p-2 border border-gray-300 rounded-md text-xs sm:text-sm"
           />
         </div>
 
         <div className="mb-4">
           <label
             htmlFor="formStatus"
-            className="block text-xs font-medium text-gray-700 mb-1"
+            className="block text-xs sm:text-sm font-medium text-gray-700 mb-1"
           >
             Form Status
           </label>
-          <p className="text-xs text-gray-500 mb-2">
+          <p className="text-xs sm:text-sm text-gray-500 mb-2">
             Enable, disable, or conditionally enable your form
           </p>
           <div className="relative">
@@ -77,7 +77,7 @@ const Setting = () => {
               id="formStatus"
               value={formStatus}
               onChange={(e) => setFormStatus(e.target.value)}
-              className="w-full p-2 pr-10 border border-gray-300 rounded-md appearance-none bg-white text-xs"
+              className="w-full p-2 pr-10 border border-gray-300 rounded-md appearance-none bg-white text-xs sm:text-sm"
             >
               <option value="ENABLED">Enabled</option>
               <option value="DISABLED">Disabled</option>
@@ -96,9 +96,9 @@ const Setting = () => {
         </div>
 
         <div
-          className={`flex items-center bg-${getStatusColor(
+          className={`flex flex-col sm:flex-row items-start sm:items-center bg-${getStatusColor(
             formStatus
-          )}-100 p-3 rounded-md h-16`}
+          )}-100 p-3 rounded-md h-auto sm:h-16`}
         >
           <div
             className={`bg-${getStatusColor(
@@ -108,21 +108,29 @@ const Setting = () => {
             <Settings className="text-white" size={16} />
           </div>
           <div className="flex flex-col">
-            <p className={`text-xs text-${getStatusColor(formStatus)}-800`}>
+            <p
+              className={`text-xs sm:text-sm text-${getStatusColor(
+                formStatus
+              )}-800`}
+            >
               {formStatus.replace(/_/g, " ")}
             </p>
-            <p className={`text-xs text-${getStatusColor(formStatus)}-600`}>
+            <p
+              className={`text-xs sm:text-sm text-${getStatusColor(
+                formStatus
+              )}-600`}
+            >
               {getStatusMessage(formStatus)}
             </p>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-between">
-        <button className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md text-xs">
+      <div className="flex flex-col sm:flex-row justify-between gap-2">
+        <button className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md text-xs sm:text-sm">
           Cancel
         </button>
-        <button className="px-4 py-2 bg-green-500 text-white rounded-md text-xs">
+        <button className="px-4 py-2 bg-green-500 text-white rounded-md text-xs sm:text-sm">
           Save
         </button>
       </div>

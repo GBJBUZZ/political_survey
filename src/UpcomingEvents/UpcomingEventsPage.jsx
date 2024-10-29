@@ -160,7 +160,7 @@ const UpcomingEventsPage = () => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto px-4 pt-20">
+      <div className="max-w-7xl mx-auto px-4 pt-10">
         {/* New Block with Text "Events" shifted to the left and adjusted size */}
         <div className="bg-indigo-600 w-32 text-xs font-semibold text-white text-center py-1 px-2 mb-2">
           EVENTS

@@ -4,7 +4,7 @@ import FormCreation from "./createpollcomponent/FormCreation";
 const CreatePoll = () => {
   return (
     <div className="pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-32 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-32  pt-10">
         <h1 className="text-3xl sm:text-2xl font-bold text-center mb-7">
           Create a Poll & Survey
         </h1>

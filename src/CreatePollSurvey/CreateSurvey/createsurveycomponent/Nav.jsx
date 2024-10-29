@@ -2,9 +2,9 @@ import React from "react";
 
 const Nav = ({ selectedTab, setSelectedTab }) => {
   return (
-    <div className="flex flex-wrap space-x-4 bg-[#ADA8F8] p-2 w-full justify-center">
+    <div className="flex flex-wrap gap-2 sm:gap-4 bg-[#ADA8F8] p-2 w-full justify-center">
       <button
-        className={`py-2 px-6 ${
+        className={`py-2 px-4 sm:px-6 ${
           selectedTab === "Build"
             ? "bg-[#4F46E5] text-white"
             : "bg-[#ADA8F8] text-gray-800"
@@ -14,7 +14,7 @@ const Nav = ({ selectedTab, setSelectedTab }) => {
         Build
       </button>
       <button
-        className={`py-2 px-6 ${
+        className={`py-2 px-4 sm:px-6 ${
           selectedTab === "Settings"
             ? "bg-[#4F46E5] text-white"
             : "bg-[#ADA8F8] text-gray-800"
@@ -24,7 +24,7 @@ const Nav = ({ selectedTab, setSelectedTab }) => {
         Settings
       </button>
       <button
-        className={`py-2 px-6 ${
+        className={`py-2 px-4 sm:px-6 ${
           selectedTab === "Publish"
             ? "bg-[#4F46E5] text-white"
             : "bg-[#ADA8F8] text-gray-800"

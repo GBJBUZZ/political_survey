@@ -9,7 +9,7 @@ const PollSurveyCreator = () => {
 
   return (
     <div className="max-w-full px-4 sm:px-8 lg:px-40">
-      <div className="pt-16 pb-10">
+      <div className="pt-10 pb-10">
         <h1 className="text-2xl font-bold text-center mb-7">
           Create a Poll & Survey
         </h1>
