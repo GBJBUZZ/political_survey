@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PollAndSurvey from "./components/pollandsurvey";
+import PollAndSurvey from '../components/pollandsurvey.js'; // or .jsx as appropriate
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 
